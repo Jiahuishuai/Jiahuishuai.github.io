@@ -359,19 +359,19 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%BF%83%E6%83%85/" title="心情: 1">
+                <a href="/categories/%E9%80%89%E6%8B%A9/" title="选择: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">心情
+                            style="background-color: #D5F5E3;">选择
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E9%80%89%E6%8B%A9/" title="选择: 1">
+                <a href="/categories/%E5%BF%83%E6%83%85/" title="心情: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #E8F8F5;">选择
+                            style="background-color: #E8F8F5;">心情
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -419,7 +419,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"课外生活","max":2},{"name":"配置","max":2},{"name":"心情","max":2},{"name":"选择","max":2}],
+            indicator: [{"name":"课外生活","max":2},{"name":"配置","max":2},{"name":"选择","max":2},{"name":"心情","max":2}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -446,60 +446,6 @@
 
 
     <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="http://music.163.com/#/song?id=395749"
-                   fixed='true'
-                   autoplay='true'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
     
 
     <div class="container row center-align"
@@ -740,3 +686,23 @@ $(function () {
 </body>
 
 </html>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--点击特效-->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+
+<!--雪花飘落-->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>

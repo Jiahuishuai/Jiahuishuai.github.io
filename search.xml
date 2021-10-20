@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>代码高亮分享工具</title>
+      <link href="/2021/10/20/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%88%86%E4%BA%AB%E5%B7%A5%E5%85%B7/"/>
+      <url>/2021/10/20/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%88%86%E4%BA%AB%E5%B7%A5%E5%85%B7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="代码分享工具"><a href="#代码分享工具" class="headerlink" title="代码分享工具"></a>代码分享工具</h1><hr><p>我们正常分享代码的时候就是截图然后添加一些注释什么的，但是这样太单调了，现在有这样一款代码分享工具，</p><p>它就是：<strong>carbon</strong></p><p>地址：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://carbon.now.sh/?bg=rgba%2874%2C144%2C226%2C1%29&amp;amp;amp;t=night-owl&amp;amp;amp;wt=none&amp;amp;amp;l=auto&amp;amp;amp;ds=true&amp;amp;amp;dsyoff=20px&amp;amp;amp;dsblur=68px&amp;amp;amp;wc=true&amp;amp;amp;wa=true&amp;amp;amp;pv=56px&amp;amp;amp;ph=56px&amp;amp;amp;ln=true&amp;amp;amp;fl=1&amp;amp;amp;fm=Hack&amp;amp;amp;fs=14px&amp;amp;amp;lh=133%25&amp;amp;amp;si=false&amp;amp;amp;es=2x&amp;amp;amp;wm=false</span><br></pre></td></tr></table></figure><hr><p>让你的代码分享更有逼格！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+            <tag> 代码分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>主题配置与修改</title>
       <link href="/2021/10/14/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BF%AE%E6%94%B9/"/>
       <url>/2021/10/14/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BF%AE%E6%94%B9/</url>

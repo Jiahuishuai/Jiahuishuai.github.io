@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>空格字符的读入与测量</title>
+      <link href="/2021/10/22/%E7%A9%BA%E6%A0%BC%E5%AD%97%E7%AC%A6%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E6%B5%8B%E9%87%8F/"/>
+      <url>/2021/10/22/%E7%A9%BA%E6%A0%BC%E5%AD%97%E7%AC%A6%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E6%B5%8B%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<h1 id="读入空格字符，与测量字符串"><a href="#读入空格字符，与测量字符串" class="headerlink" title="读入空格字符，与测量字符串"></a>读入空格字符，与测量字符串</h1><hr><p>c++中读入包含空格的字符串</p><h2 id="1、gets"><a href="#1、gets" class="headerlink" title="1、gets()"></a>1、gets()</h2><p>该方法在c++11中已经删除</p><p><a href="https://imgtu.com/i/5cufZq"><img src="https://z3.ax1x.com/2021/10/22/5cufZq.png" alt="5cufZq.png"></a></p><h2 id="2、getline"><a href="#2、getline" class="headerlink" title="2、getline"></a>2、getline</h2><p>包含头文件#include<string>,当定义为string型而不是char型时，使用getline()函数。</p><p><a href="https://imgtu.com/i/5cKPQH"><img src="https://z3.ax1x.com/2021/10/22/5cKPQH.png" alt="5cKPQH.png"></a></p><h2 id="3、cin-get-char-str-int-maxnum"><a href="#3、cin-get-char-str-int-maxnum" class="headerlink" title="3、cin.get(char *str, int maxnum)"></a>3、cin.get(char *str, int maxnum)</h2><p><a href="https://imgtu.com/i/5cKgfO"><img src="https://z3.ax1x.com/2021/10/22/5cKgfO.png" alt="5cKgfO.png"></a></p><h2 id="4、cin-getline-char-str-int-maxnum"><a href="#4、cin-getline-char-str-int-maxnum" class="headerlink" title="4、cin.getline(char *str,int maxnum)"></a>4、cin.getline(char *str,int maxnum)</h2><p><a href="https://imgtu.com/i/5cMRU0"><img src="https://z3.ax1x.com/2021/10/22/5cMRU0.png" alt="5cMRU0.png"></a></p><hr><h2 id="测量字符长度"><a href="#测量字符长度" class="headerlink" title="测量字符长度"></a>测量字符长度</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">strlen(str)、str.length()、str.size()、sizeof(str)都可以求字符串长度。</span><br><span class="line"></span><br><span class="line">其中str.length()、str.size()、sizeof(str)是用于求string类对象的成员函数</span><br><span class="line"></span><br><span class="line">strlen(str)是用于求字符数组的长度，其参数是char*</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基础语法 </tag>
+            
+            <tag> C++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>代码高亮分享工具</title>
       <link href="/2021/10/20/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%88%86%E4%BA%AB%E5%B7%A5%E5%85%B7/"/>
       <url>/2021/10/20/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%88%86%E4%BA%AB%E5%B7%A5%E5%85%B7/</url>
@@ -87,7 +114,7 @@
       <link href="/2021/10/09/freenom/"/>
       <url>/2021/10/09/freenom/</url>
       
-        <content type="html"><![CDATA[<h1 id="申请域名并投入使用踩的坑"><a href="#申请域名并投入使用踩的坑" class="headerlink" title="申请域名并投入使用踩的坑"></a>申请域名并投入使用踩的坑</h1><p>[TOC]</p><hr><h2 id="1、申请域名"><a href="#1、申请域名" class="headerlink" title="1、申请域名"></a>1、申请域名</h2><p>然后，正常注册，挑选一个自己比较心仪的域名。</p><p>（这里有坑），咱们正常的情况下会出现最后一步不能证明你是人的情况，这里就需要使用一个插件，微软自带的浏览器也行，谷歌也可，它的名字是：Gooreplacer</p><p>配置规则是：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">匹配模式： www.google.com/recaptcha</span><br><span class="line">目标地址： recaptcha.net/recaptcha</span><br></pre></td></tr></table></figure><p>这样启动刷新页面就行了。</p><hr><h2 id="2、添加dns解析"><a href="#2、添加dns解析" class="headerlink" title="2、添加dns解析"></a>2、添加dns解析</h2><p>我使用是免费的dnspod（白嫖最大），注册账号，然后使用免费的dns功能。</p><p>这里是有一点需要注意的，比如说是：</p><p>在freenom页面中的nameserver中，添加：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tarantula.dnspod.net.</span><br><span class="line"></span><br><span class="line">pass.dnspod.net.</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="申请域名并投入使用踩的坑"><a href="#申请域名并投入使用踩的坑" class="headerlink" title="申请域名并投入使用踩的坑"></a>申请域名并投入使用踩的坑</h1><p>[TOC]</p><hr><h2 id="1、申请域名"><a href="#1、申请域名" class="headerlink" title="1、申请域名"></a>1、申请域名</h2><p>然后，正常注册，挑选一个自己比较心仪的域名。</p><p>（这里有坑），咱们正常的情况下会出现最后一步不能证明你是人的情况，这里就需要使用一个插件，微软自带的浏览器也行，谷歌也可，它的名字是：Gooreplacer</p><p>配置规则是：</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">匹配模式： www.google.com/recaptcha</span><br><span class="line">目标地址： recaptcha.net/recaptcha</span><br></pre></td></tr></table></figure><p>这样启动刷新页面就行了。</p><hr><h2 id="2、添加dns解析"><a href="#2、添加dns解析" class="headerlink" title="2、添加dns解析"></a>2、添加dns解析</h2><p>我使用是免费的dnspod（白嫖最大），注册账号，然后使用免费的dns功能。</p><p>这里是有一点需要注意的，比如说是：</p><p>在freenom页面中的nameserver中，添加：</p><figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tarantula.dnspod.net.</span><br><span class="line"></span><br><span class="line">pass.dnspod.net.</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>

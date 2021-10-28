@@ -5,6 +5,31 @@
     
     <entry>
       <title>空格字符的读入与测量</title>
+      <link href="/2021/10/28/pycharm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+      <url>/2021/10/28/pycharm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pycharm的安装与配置"><a href="#pycharm的安装与配置" class="headerlink" title="pycharm的安装与配置"></a>pycharm的安装与配置</h1><hr><p>在装pycharm时最好先安装并且配置好python</p><hr><p>1、先下载并安装pycharm</p><p>官网：[pycharm](<a href="https://www.jetbrains.com/code-with-me/buy/?fromIDE#commercial">Code With Me Pricing - JetBrains</a>)</p><p>2、点击 Create New Project</p><p>Location是我们存放工程的路径，点击<img src="https://www.runoob.com/wp-content/uploads/2018/05/1525863039-5575-.png" alt="img">这个三角符号，下面就可以看到pycharm已经已经自动获取了Python 3.9。</p><p>文件路径也可以自由选择。记住，我们选择的路径需要为空，不然无法创建，第二个Location不用动它，是自动默认的，其余不用点，然后点击Create。出现如下界面，这是Pycharm在配置环境，静静等待。最后点击close关掉提示就好了</p><p>3、建立编译环境</p><blockquote><ul><li><p>右键<img src="https://www.runoob.com/wp-content/uploads/2018/05/1525863039-5988-.png" alt="img">点击New,选择Python File</p></li><li><p>给file取个名字，点击OK</p></li></ul></blockquote><p>至此，我们的初始工作基本完成。</p><hr><p>最后写一个py程序测试一下即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>空格字符的读入与测量</title>
       <link href="/2021/10/22/%E7%A9%BA%E6%A0%BC%E5%AD%97%E7%AC%A6%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E6%B5%8B%E9%87%8F/"/>
       <url>/2021/10/22/%E7%A9%BA%E6%A0%BC%E5%AD%97%E7%AC%A6%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E6%B5%8B%E9%87%8F/</url>
       

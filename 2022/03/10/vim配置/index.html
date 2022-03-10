@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vscode的重新理解与配置, 南宫有肆のblog">
+    <meta name="keywords" content="vim配置, 南宫有肆のblog">
     <meta name="description" content="忠于当下">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vscode的重新理解与配置 | 南宫有肆のblog</title>
+    <title>vim配置 | 南宫有肆のblog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -431,12 +431,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vscode的重新理解与配置</h1>
+                    <h1 class="description center-align post-title">vim配置</h1>
                 </div>
             </div>
         </div>
@@ -552,12 +552,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%85%8D%E7%BD%AE/">
-                                <span class="chip bg-color">配置</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%AF%BE%E5%A4%96/">
-                                <span class="chip bg-color">课外</span>
+                            <a href="/tags/vim/">
+                                <span class="chip bg-color">vim</span>
                             </a>
                         
                     </div>
@@ -568,8 +564,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BE%E5%A4%96/" class="post-category">
-                                课外
+                            <a href="/categories/%E9%85%8D%E7%BD%AE/" class="post-category">
+                                配置
                             </a>
                         
                     </div>
@@ -581,28 +577,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-12
+                    2022-03-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-12
+                    2021-10-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    378
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
 
@@ -622,26 +618,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="vscode的c-配置"><a href="#vscode的c-配置" class="headerlink" title="vscode的c++配置"></a>vscode的c++配置</h1><h2 id="1、首先有个语言编译器"><a href="#1、首先有个语言编译器" class="headerlink" title="1、首先有个语言编译器"></a>1、首先有个语言编译器</h2><ul>
-<li><p>因为我目前还在上学，所以用的事Dev-c++的自带编译器</p>
-</li>
-<li><p>然后添加属性</p>
-</li>
-</ul>
-<h2 id="2、安装vscode的相关插件"><a href="#2、安装vscode的相关插件" class="headerlink" title="2、安装vscode的相关插件"></a>2、安装vscode的相关插件</h2><ul>
-<li>c++插件</li>
-<li>汉化包插件</li>
-</ul>
-<h2 id="3、配置-vscode文件"><a href="#3、配置-vscode文件" class="headerlink" title="3、配置.vscode文件"></a>3、配置.vscode文件</h2><p>编写一个.cpp文件，然后点击运行，之后全部点第一个，然后就会出现两个vscode的配置文件</p>
-<ul>
-<li>launch.json</li>
-</ul>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> 2     <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line"> 3     <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line"> <span class="number">4</span>         &#123;</span><br><span class="line"> 5             <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;g++.exe build and debug active file&quot;</span>,</span><br><span class="line"> 6             <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;cppdbg&quot;</span>,</span><br><span class="line"> 7             <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line"> 8             <span class="attr">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span>,</span><br><span class="line"> 9             <span class="attr">&quot;args&quot;</span>: [],</span><br><span class="line">10             <span class="attr">&quot;stopAtEntry&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">11             <span class="attr">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span>,</span><br><span class="line">12             <span class="attr">&quot;environment&quot;</span>: [],</span><br><span class="line">13             <span class="attr">&quot;externalConsole&quot;</span>: <span class="literal">true</span>,      <span class="comment">//修改此项，让其弹出终端</span></span><br><span class="line">14             <span class="attr">&quot;MIMode&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">15             <span class="attr">&quot;miDebuggerPath&quot;</span>: <span class="string">&quot;D:\\2Software\\mingw64\\bin\\gdb.exe&quot;</span>,</span><br><span class="line">16             <span class="attr">&quot;setupCommands&quot;</span>: [</span><br><span class="line"><span class="number">17</span>                 &#123;</span><br><span class="line">18                     <span class="attr">&quot;description&quot;</span>: <span class="string">&quot;Enable pretty-printing for gdb&quot;</span>,</span><br><span class="line">19                     <span class="attr">&quot;text&quot;</span>: <span class="string">&quot;-enable-pretty-printing&quot;</span>,</span><br><span class="line">20                     <span class="attr">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line"><span class="number">21</span>                 &#125;</span><br><span class="line"><span class="number">22</span>             ],</span><br><span class="line">23             <span class="attr">&quot;preLaunchTask&quot;</span>: <span class="string">&quot;task g++&quot;</span> </span><br><span class="line"><span class="number">24</span>         &#125;</span><br><span class="line"><span class="number">25</span>     ]</span><br><span class="line"><span class="number">26</span> &#125;</span><br></pre></td></tr></table></figure>
+                <h1 id="vim：配置过程"><a href="#vim：配置过程" class="headerlink" title="vim：配置过程"></a>vim：配置过程</h1><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/hwEh7T"><img src="https://z3.ax1x.com/2021/09/01/hwEh7T.png" alt="hwEh7T.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/hwEzND"><img src="https://z3.ax1x.com/2021/09/01/hwEzND.png" alt="hwEzND.png"></a></p>
+<h2 id="上图代码："><a href="#上图代码：" class="headerlink" title="上图代码："></a>上图代码：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">备份数据源 输入命令 sudo cp /etc/apt/sources.list /etc/apt/sources-backup.list</span><br><span class="line">6.更换数据源 输入命令 sudo vim /etc/apt/sources.list</span><br><span class="line">7.进入更换阿里数据源 打开网站 找到对应版本数据源 把原有的源清空 把阿里的源输入进去</span><br><span class="line">//阿里源地址</span><br><span class="line">https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11dHF7v5</span><br><span class="line">//清华源地址</span><br><span class="line">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</span><br><span class="line">//阿里源20.04LTS</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe</span><br><span class="line">multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe</span><br><span class="line">multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted</span><br><span class="line">universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe</span><br><span class="line">multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe</span><br><span class="line">multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe</span><br><span class="line">multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted</span><br><span class="line">universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe</span><br><span class="line">multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted</span><br><span class="line">universe multiverse</span><br><span class="line">//清华源20.04LTS</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe</span><br><span class="line">multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted</span><br><span class="line">universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">//清华源18.04LTS</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe</span><br><span class="line">multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted</span><br><span class="line">universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main</span><br><span class="line">restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">//清华源16.04LTS</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe</span><br><span class="line">multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted</span><br><span class="line">universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main</span><br><span class="line">restricted universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted</span><br><span class="line">universe multiverse</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main</span><br><span class="line">restricted universe multiverse</span><br><span class="line">8.更新源 输入命令</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p>task.json</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"> 2     <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;2.0.0&quot;</span>,</span><br><span class="line"> 3     <span class="attr">&quot;tasks&quot;</span>: [</span><br><span class="line"> <span class="number">4</span>         &#123;</span><br><span class="line"> 5             <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;shell&quot;</span>, <span class="comment">//修改此项</span></span><br><span class="line"> 6             <span class="attr">&quot;label&quot;</span>: <span class="string">&quot;task g++&quot;</span>,    </span><br><span class="line"> 7             <span class="attr">&quot;command&quot;</span>: <span class="string">&quot;D:\\2Software\\mingw64\\bin\\g++.exe&quot;</span>,</span><br><span class="line"> 8             <span class="attr">&quot;args&quot;</span>: [</span><br><span class="line"> <span class="number">9</span>                 <span class="string">&quot;-g&quot;</span>,</span><br><span class="line"><span class="number">10</span>                 <span class="string">&quot;$&#123;file&#125;&quot;</span>,</span><br><span class="line"><span class="number">11</span>                 <span class="string">&quot;-o&quot;</span>,</span><br><span class="line"><span class="number">12</span>                 <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span></span><br><span class="line"><span class="number">13</span>             ],</span><br><span class="line">14             <span class="attr">&quot;options&quot;</span>: &#123;</span><br><span class="line">15                 <span class="attr">&quot;cwd&quot;</span>: <span class="string">&quot;D:\\2Software\\mingw64\\bin&quot;</span></span><br><span class="line"><span class="number">16</span>             &#125;,</span><br><span class="line">17             <span class="attr">&quot;problemMatcher&quot;</span>: [</span><br><span class="line"><span class="number">18</span>                 <span class="string">&quot;$gcc&quot;</span></span><br><span class="line"><span class="number">19</span>             ],</span><br><span class="line">20             <span class="attr">&quot;group&quot;</span>: <span class="string">&quot;build&quot;</span></span><br><span class="line"><span class="number">21</span>         &#125;</span><br><span class="line"><span class="number">22</span>     ]</span><br><span class="line"><span class="number">23</span> &#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">1.安装gcc编译器</span><br><span class="line">sudo apt install gcc</span><br><span class="line">2.安装g++编译器</span><br><span class="line">sudo apt install g++</span><br><span class="line">1. 使用命令 sudo vim /etc/ssh/sshd_config 打开sshd的配置文件，找到</span><br><span class="line">ClientAliveInterval 和 ClientAliveCountMax 并将其修改为（如果没有直接添加即可）：</span><br><span class="line">2. 重启sshd服务</span><br><span class="line">sudo service sshd restart</span><br><span class="line">1. 更新apt源信息</span><br><span class="line">sudo apt update</span><br><span class="line">2. 配置vim，执行下面命令配置安装vim</span><br><span class="line"></span><br><span class="line">wget 47.93.11.51:88/install_vim.sh</span><br><span class="line">bash install_vim.sh</span><br><span class="line">1. 安装zsh</span><br><span class="line">sudo apt install zsh</span><br><span class="line">2. 修改默认shell为zsh</span><br><span class="line">chsh -s /bin/zsh</span><br><span class="line">3.安装oh-my-zsh</span><br><span class="line">sh -c &quot;$(wget https://raw.github.com/robbyrussell/oh-myzsh/master/tools/install.sh -O -)&quot;</span><br><span class="line">##如果不成功，请执行下面两条命令，成功了就不需要做下面两条</span><br><span class="line">wget 47.93.11.51:88/install_zsh.sh</span><br><span class="line">bash install_zsh.sh</span><br><span class="line">4.安装zsh-syntax-highlighting</span><br><span class="line">git clone https://github.com/zsh-users/zsh-syntax-highlighting.git</span><br><span class="line">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;/plugins/zsh-syntax-highlighting</span><br><span class="line">5.使用命令 vim .zshrc 打开.zshrc文件，找到 plugins=() 这一行，将zsh-syntax-highlighting添加进</span><br><span class="line">去</span><br><span class="line">plugins=(git zsh-syntax-highlighting)</span><br><span class="line">6.安装其他插件</span><br><span class="line">##命令自动补全插件</span><br><span class="line">mkdir ~/.oh-my-zsh/plugins/incr</span><br><span class="line">wget http://mimosa-pudica.net/src/incr-0.2.zsh -O ~/.oh-myzsh/plugins/incr/incr.plugin.zsh</span><br><span class="line">##命令自动推荐，根据历史记录</span><br><span class="line">git clone https://github.com/zsh-users/zsh-autosuggestions $&#123;ZSH_CUSTOM:-~/.ohmy-zsh/custom&#125;/plugins/zsh-autosuggestions</span><br><span class="line">##目录自动跳转插件</span><br><span class="line">sudo apt install autojump</span><br><span class="line">7.使用命令 vim .zshrc ，打开后在最后插入以下内容：</span><br><span class="line">#设置终端颜色，提示符，及上一条指令返回码提示</span><br><span class="line">autoload -U colors &amp;&amp; colors</span><br><span class="line">PROMPT=&quot;%&#123;$fg[red]%&#125;%n%&#123;$reset_color%&#125;@%&#123;$fg[blue]%&#125;%m %&#123;$fg[yellow]%&#125;%1~ %</span><br><span class="line">&#123;$reset_color%&#125;%# &quot;</span><br><span class="line">RPROMPT=&quot;[%&#123;$fg[yellow]%&#125;%?%&#123;$reset_color%&#125;]&quot;</span><br><span class="line"># Useful support for interacting with Terminal.app or other terminal programs</span><br><span class="line">[ -r &quot;/etc/zshrc_$TERM_PROGRAM&quot; ] &amp;&amp; . &quot;/etc/zshrc_$TERM_PROGRAM&quot;</span><br><span class="line">source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zshautosuggestions.plugin.zsh</span><br><span class="line">source /usr/share/autojump/autojump.sh</span><br><span class="line">source ~/.oh-my-zsh/plugins/incr/incr*.zsh</span><br><span class="line">1. 使用以下命令安装ctags</span><br><span class="line">sudo apt install ctags</span><br><span class="line">2.执行以下命令</span><br><span class="line">ctags -I __THROW -I __attribute_pure__ -I __nonnull -I __attribute__ --filescope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --c++-</span><br><span class="line">kinds=+p --fields=+iaS --extra=+q -f ~/.vim/systags /usr/include/*</span><br><span class="line">/usr/include/x86_64-linux-gnu/sys/* /usr/include/x86_64-linux-gnu/bits/*</span><br><span class="line">/usr/include/arpa/*</span><br><span class="line">3.使用命令 vim .vimrc 编辑.vimrc，在最后添加以下内容</span><br><span class="line">set tags+=~/.vim/systags</span><br><span class="line">1. 使用以下命令安装</span><br><span class="line">sudo apt install glibc-doc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>基本操作：<br>切换root用户：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure>
+
+<p>切换到普通用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -普通用户名</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -668,7 +657,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/11/12/vscode%E7%9A%84%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E4%B8%8E%E9%85%8D%E7%BD%AE/">http://example.com/2021/11/12/vscode%E7%9A%84%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E4%B8%8E%E9%85%8D%E7%BD%AE/</a>
+                    <a href="http://example.com/2022/03/10/vim%E9%85%8D%E7%BD%AE/">http://example.com/2022/03/10/vim%E9%85%8D%E7%BD%AE/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -706,12 +695,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%85%8D%E7%BD%AE/">
-                                    <span class="chip bg-color">配置</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%AF%BE%E5%A4%96/">
-                                    <span class="chip bg-color">课外</span>
+                                <a href="/tags/vim/">
+                                    <span class="chip bg-color">vim</span>
                                 </a>
                             
                         </div>
@@ -761,13 +746,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/03/10/Linux%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%EF%BC%9A/">
+                <a href="/2022/03/10/%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%88%86%E4%BA%AB%E5%B7%A5%E5%85%B7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Linux 一些常用命令">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="代码高亮分享工具">
                         
-                        <span class="card-title">Linux 一些常用命令</span>
+                        <span class="card-title">代码高亮分享工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,6 +765,59 @@
                         <span class="publish-date">
                             <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E5%88%86%E4%BA%AB/">
+                        <span class="chip bg-color">代码分享</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/10/pycharm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="pycharm的安装与配置">
+                        
+                        <span class="card-title">pycharm的安装与配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -797,55 +835,6 @@
                     
                     <a href="/tags/%E5%B7%A5%E5%85%B7/">
                         <span class="chip bg-color">工具</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/10/09/freenom/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="freenom">
-                        
-                        <span class="card-title">freenom</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BE%E5%A4%96%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    课外生活
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/freenom/">
-                        <span class="chip bg-color">freenom</span>
                     </a>
                     
                 </div>

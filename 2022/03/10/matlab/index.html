@@ -1,0 +1,1488 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="matlab的简单使用, 南宫有肆のblog">
+    <meta name="description" content="忠于当下">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>matlab的简单使用 | 南宫有肆のblog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+    <style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },2500); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+</script>
+
+ 
+<body>
+    
+        <div id="loading-container">
+             <p class="loading-text">嘘~  正在从服务器偷取页面 . . . </p> 
+             <div class="loading-image">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div>
+             </div>
+        </div>
+    
+
+
+   <style>
+    body{
+       background-image: url(https://z3.ax1x.com/2021/10/02/4H2bpn.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">南宫有肆のblog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>更多</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://music.163.com/#/outchain/2/362998/">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://zbhz.lanzoui.com/b00hmy3da">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>联盟换肤</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">南宫有肆のblog</div>
+        <div class="logo-desc">
+            
+            忠于当下
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			更多
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://music.163.com/#/outchain/2/362998/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://zbhz.lanzoui.com/b00hmy3da " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>联盟换肤</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">matlab的简单使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BB%BA%E6%A8%A1/">
+                                <span class="chip bg-color">建模</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-10
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-12-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="matlab"><a href="#matlab" class="headerlink" title="matlab"></a>matlab</h1><p>简介：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">科学计算与MATLAB语言的关系：</span><br><span class="line">1、不需要过多了解各种数值计算方法的具体细节和计算公式，也不需要繁琐的底层编程。</span><br><span class="line">2、可以专注于问题的求解</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MATLAB语言的主要功能</span><br><span class="line">1、数值计算</span><br><span class="line">2、符号计算</span><br><span class="line">3、图形绘制</span><br><span class="line">3、程序流程控制</span><br><span class="line">4、工具箱</span><br></pre></td></tr></table></figure>
+
+<p>$$<br>求解：x ^ 2 - 3 x + 1 = 0<br>$$</p>
+<blockquote>
+<ol>
+<li>求根公式求解</li>
+<li>二分，切割等暴力求解</li>
+</ol>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">学习目标：</span><br><span class="line"></span><br><span class="line">1、要求理解matlab功能实现的数学背景与算法原理</span><br><span class="line">2、掌握利用matlab进行问题求解的基本规律</span><br><span class="line">3、嫩供食用matlab作为专业应用的工具</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TU5Zsx"><img src="https://s4.ax1x.com/2021/12/25/TU5Zsx.png" alt="TU5Zsx.png"></a></p>
+<h2 id="一、matlab基础知识"><a href="#一、matlab基础知识" class="headerlink" title="一、matlab基础知识"></a>一、matlab基础知识</h2><h3 id="1、matlab系统环境"><a href="#1、matlab系统环境" class="headerlink" title="1、matlab系统环境"></a>1、matlab系统环境</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TaJbKx"><img src="https://s4.ax1x.com/2021/12/25/TaJbKx.png" alt="TaJbKx.png"></a></p>
+<p>如何设置文件搜索路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、用path命令设置文件搜索路径，例如：</span><br><span class="line"> &gt;&gt; path(path,&#x27;e\work&#x27;)</span><br><span class="line">2、用对话框设置文件搜索路径</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TatRNF"><img src="https://s4.ax1x.com/2021/12/25/TatRNF.png" alt="TatRNF.png"></a></p>
+<h3 id="2、matlab数值数据"><a href="#2、matlab数值数据" class="headerlink" title="2、matlab数值数据"></a>2、matlab数值数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">整型：有符号位和无符号位两种</span><br><span class="line"></span><br><span class="line">int8函数：强制转换有符号位</span><br><span class="line">uint8函数：强制转换无符号位</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">浮点型：</span><br><span class="line"></span><br><span class="line">1、单精度型</span><br><span class="line">2、双精度型</span><br><span class="line"></span><br><span class="line">single函数：将其他类型的数据转换为单精度型</span><br><span class="line">double函数：将其他类型的数据转换为双精度型</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">复型：包括实部和虚部</span><br><span class="line"></span><br><span class="line">real函数：求复数的实部</span><br><span class="line">imag函数：求复数的虚部</span><br></pre></td></tr></table></figure>
+
+<p>常用数学函数的调用格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名（函数自变量）</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TaUwyn"><img src="https://s4.ax1x.com/2021/12/25/TaUwyn.png" alt="TaUwyn.png"></a></p>
+<p>==常用函数的应用：==</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">abs函数可以求实数的绝对值、复数的模，字符串的ASCLL码</span><br><span class="line"></span><br><span class="line">用于取整的函数有 fix、 floor、 ceil、 round</span><br><span class="line">1、round 函数按照四舍五入的规则取证</span><br><span class="line">2、ceil函数是向上取整，取大于等于这个数的第一个整数</span><br><span class="line">3、floor 函数是向下取整，去小于等于这个数的第一个整数</span><br><span class="line">4、fix 函数是固定取靠近0的那个整数，即舍去小数取整</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">求素数（matlab）</span><br><span class="line"></span><br><span class="line">&gt;&gt; k = isprime(x);</span><br><span class="line">&gt;&gt; k1 = find(k);</span><br><span class="line">&gt;&gt; p = x(k1)</span><br><span class="line"></span><br><span class="line">p =</span><br><span class="line"></span><br><span class="line">  1 至 13 列</span><br><span class="line"></span><br><span class="line">     2     3     5     7    11    13    17    19    23    29    31    37    41</span><br><span class="line"></span><br><span class="line">  14 至 25 列</span><br><span class="line"></span><br><span class="line">    43    47    53    59    61    67    71    73    79    83    89    97</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、变量及其操作"><a href="#3、变量及其操作" class="headerlink" title="3、变量及其操作"></a>3、变量及其操作</h3><p>在matlab中，变量名是==以字母开头==，后接字母、数字或者下划线的字符序列最多63个字符</p>
+<p>例题：<a target="_blank" rel="noopener" href="https://imgtu.com/i/TaTk34"><img src="https://s4.ax1x.com/2021/12/25/TaTk34.png" alt="TaTk34.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">题解：</span><br><span class="line"></span><br><span class="line">&gt;&gt; x = sqrt(7) - 2i;</span><br><span class="line">&gt;&gt; y = exp(pi/2);</span><br><span class="line">&gt;&gt; z = (5 + cosd(47)) / (1 + abs(x - y)</span><br><span class="line"> z = (5 + cosd(47)) / (1 + abs(x - y)</span><br><span class="line">                                     ↑</span><br><span class="line">错误: 表达式无效。调用函数或对变量进行索引时，请使用圆括号。否则，请检查不匹配的分隔符。</span><br><span class="line"> </span><br><span class="line">是不是想输入:</span><br><span class="line">&gt;&gt; z = (5 + cosd(47)) / (1 + abs(x - y))</span><br><span class="line"></span><br><span class="line">z =</span><br><span class="line"></span><br><span class="line">    1.4395</span><br><span class="line"></span><br><span class="line">&gt;&gt; </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">预定义变量是由系统本身定义的变量</span><br><span class="line"></span><br><span class="line">1、ans是默认赋值变量</span><br><span class="line">2、 i和j代表虚数单位</span><br><span class="line">3、 pi代表圆周率</span><br><span class="line">4、NaN代表非数</span><br></pre></td></tr></table></figure>
+
+<p>变量的管理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">who （显示变量名）</span><br><span class="line">whos（显示变量的各种数值）</span><br></pre></td></tr></table></figure>
+
+<p>内存变量文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">save命令： 创建内存变量文件</span><br><span class="line">load命令： 装入内存变量文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、matlab矩阵的表示"><a href="#4、matlab矩阵的表示" class="headerlink" title="4、matlab矩阵的表示"></a>4、matlab矩阵的表示</h3><p>矩阵的建立</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将矩阵的元素用中括号括起来，安矩阵行的顺序输入个元素，同一行的个元素之间用逗号或空格分隔，不同行的元素之间用分号分隔</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = [1 2 3; 4 5 6; 7 8 9]</span><br><span class="line"></span><br><span class="line">a =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br><span class="line">     7     8     9</span><br></pre></td></tr></table></figure>
+
+<p>矩阵的操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; b = [1 2 3; 4 5 6];</span><br><span class="line">&gt;&gt; c = [6 7 8; 9 0 11];</span><br><span class="line">&gt;&gt; a = b + c * i</span><br><span class="line"></span><br><span class="line">a =</span><br><span class="line"></span><br><span class="line">   1.0000 + 6.0000i   2.0000 + 7.0000i   3.0000 + 8.0000i</span><br><span class="line">   4.0000 + 9.0000i   5.0000 + 0.0000i   6.0000 +11.0000i</span><br></pre></td></tr></table></figure>
+
+<p>冒号表达式：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TaO6r4"><img src="https://s4.ax1x.com/2021/12/25/TaO6r4.png" alt="TaO6r4.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">linspace函数等价于冒号表达式</span><br><span class="line"></span><br><span class="line">linspace(a, b, n)</span><br></pre></td></tr></table></figure>
+
+<p>结构矩阵和单元矩阵</p>
+<p>1、结构矩阵</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TaXKL4"><img src="https://s4.ax1x.com/2021/12/25/TaXKL4.png" alt="TaXKL4.png"></a></p>
+<p>2、单元矩阵</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TaXtSK"><img src="https://s4.ax1x.com/2021/12/25/TaXtSK.png" alt="TaXtSK.png"></a></p>
+<h3 id="5、矩阵元素的引用"><a href="#5、矩阵元素的引用" class="headerlink" title="5、矩阵元素的引用"></a>5、矩阵元素的引用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">通过下标来引用矩阵元素（下标不是从零开始）</span><br><span class="line"></span><br><span class="line">矩阵元素的序号与下标可以利用 sub2ind 和 ind2sub 函数实现相互转换</span><br><span class="line"></span><br><span class="line">sub2ind 函数： 将矩阵中指定元素的行、列下标转换成存储的序号。调用格式为：</span><br><span class="line">d = sub2ind(s, i, j)            其中 s 是指行数和列数组成的向量； i是行下标； j 列是下标</span><br><span class="line">ind2sub 函数</span><br></pre></td></tr></table></figure>
+
+<p>==例：==</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = [1 : 3; 4 : 6];</span><br><span class="line">&gt;&gt; d = sub2ind(size(a),[1, 2; 2, 2], [1, 2; 3, 2])</span><br><span class="line"></span><br><span class="line">d =</span><br><span class="line"></span><br><span class="line">     1     4</span><br><span class="line">     6     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; a = [1 : 3; 4 : 6];</span><br><span class="line">&gt;&gt; </span><br><span class="line">&gt;&gt; a = [1 : 3; 4 : 6];</span><br><span class="line">&gt;&gt; a = [1 : 3; 4 : 6]</span><br><span class="line"></span><br><span class="line">a =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;&gt; [i, j] = ind2sub([3, 3], [1, 3, 5])</span><br><span class="line"></span><br><span class="line">i =</span><br><span class="line"></span><br><span class="line">     1     3     2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">j =</span><br><span class="line"></span><br><span class="line">     1     1     2</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TavBGt"><img src="https://s4.ax1x.com/2021/12/25/TavBGt.png" alt="TavBGt.png"></a></p>
+<p>删除矩阵</p>
+<p>==例：==</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = [1 2 3 0 0; 7 0 9 2 5; 1 4 -2 2 3]</span><br><span class="line"></span><br><span class="line">a =</span><br><span class="line"></span><br><span class="line">     1     2     3     0     0</span><br><span class="line">     7     0     9     2     5</span><br><span class="line">     1     4    -2     2     3</span><br><span class="line"></span><br><span class="line">&gt;&gt; a(:, [2, 4]) = []</span><br><span class="line"></span><br><span class="line">a =</span><br><span class="line"></span><br><span class="line">     1     3     0</span><br><span class="line">     7     9     5</span><br><span class="line">     1    -2     3</span><br></pre></td></tr></table></figure>
+
+<h3 id="6、matlab基本运算"><a href="#6、matlab基本运算" class="headerlink" title="6、matlab基本运算"></a>6、matlab基本运算</h3><blockquote>
+<ul>
+<li>算数运算</li>
+<li>关系运算</li>
+<li>逻辑运算</li>
+</ul>
+</blockquote>
+<p>对于矩阵来说，右除和左除表示两种不同的除数矩阵和被除数矩阵关系</p>
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; 3/4</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    0.7500</span><br><span class="line"></span><br><span class="line">&gt;&gt; 4\3</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    0.7500</span><br></pre></td></tr></table></figure>
+
+<p>点运算符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">定义</span><br><span class="line"></span><br><span class="line">.* 表示的是对应元素进行运算</span><br><span class="line">* 表示的矩阵进行运算</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TwOBxf"><img src="https://s4.ax1x.com/2021/12/26/TwOBxf.png" alt="TwOBxf.png"></a></p>
+<p>逻辑运算</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">与、或、非</span><br><span class="line"></span><br><span class="line">结果就是0 或者 1</span><br></pre></td></tr></table></figure>
+
+<p>水仙花数问题：</p>
+<p>各位数字的立方和等于该数本身的三位正整数，求全部的水仙花数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; m = 100 : 999;</span><br><span class="line">&gt;&gt; m1 = rem(m, 10);</span><br><span class="line">&gt;&gt; m2 = rem(fix(m/10), 10);</span><br><span class="line">&gt;&gt; m3 = fix(m/10);</span><br><span class="line">&gt;&gt; m3 = fix(m/100);</span><br><span class="line">&gt;&gt; k = find(m == m1 .* m1 .* m1 + m2 .* m2 .* m2 + m3 .* m3 .* m3)</span><br><span class="line"></span><br><span class="line">k =</span><br><span class="line"></span><br><span class="line">    54   271   272   308</span><br><span class="line"></span><br><span class="line">&gt;&gt; s = m(k)</span><br><span class="line"></span><br><span class="line">s =</span><br><span class="line"></span><br><span class="line">   153   370   371   407</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、字符串处理"><a href="#7、字符串处理" class="headerlink" title="7、字符串处理"></a>7、字符串处理</h3><p>定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在matlab中，字符串是用单引号括起来的字符序列，</span><br><span class="line"></span><br><span class="line">如何字符串中含有一个单引号，那么该单引号应该用两个单引号来括起来</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Twjn91"><img src="https://s4.ax1x.com/2021/12/26/Twjn91.png" alt="Twjn91.png"></a></p>
+<p>实际操作：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; subch = ch(<span class="number">1</span> : <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">subch =</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;asdf1&#x27;</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; revch = ch(<span class="keyword">end</span> : <span class="number">-1</span> : <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">revch =</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;fda4321fdsa&#x27;</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; k = <span class="built_in">find</span> (ch &gt;= <span class="string">&#x27;a&#x27;</span> &amp; ch &lt;= <span class="string">&#x27;z&#x27;</span>)</span><br><span class="line"></span><br><span class="line">k =</span><br><span class="line"></span><br><span class="line">     <span class="number">1</span>     <span class="number">2</span>     <span class="number">3</span>     <span class="number">4</span>     <span class="number">9</span>    <span class="number">10</span>    <span class="number">11</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; ch(k) = ch(k) - (<span class="string">&#x27;a&#x27;</span> - <span class="string">&#x27;A&#x27;</span>)</span><br><span class="line"></span><br><span class="line">ch =</span><br><span class="line"></span><br><span class="line">    <span class="string">&#x27;ASDF1234ADF&#x27;</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="built_in">length</span>(k)</span><br><span class="line"></span><br><span class="line"><span class="built_in">ans</span> =</span><br><span class="line"></span><br><span class="line">     <span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<p>字符串与数值之间的转换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abs 函数和 double 函数都可以用来获取字符串矩阵所对应的ASCLL码数值矩阵</span><br><span class="line"></span><br><span class="line">char 函数可以把ASCll码矩阵转换为字符串矩阵</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TwvF2t"><img src="https://s4.ax1x.com/2021/12/26/TwvF2t.png" alt="TwvF2t.png"></a></p>
+<p>字符串的比较结果只有两个：0 或者 1</p>
+<p>字符串比较长度方法有四种：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Twvl2q"><img src="https://s4.ax1x.com/2021/12/26/Twvl2q.png" alt="Twvl2q.png"></a></p>
+<p>字符串的查找与替换：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TwvJqU"><img src="https://s4.ax1x.com/2021/12/26/TwvJqU.png" alt="TwvJqU.png"></a></p>
+<h2 id="二、矩阵处理"><a href="#二、矩阵处理" class="headerlink" title="二、矩阵处理"></a>二、矩阵处理</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Twv4zt"><img src="https://s4.ax1x.com/2021/12/26/Twv4zt.png" alt="Twv4zt.png"></a></p>
+<h3 id="1、特殊矩阵"><a href="#1、特殊矩阵" class="headerlink" title="1、特殊矩阵"></a>1、特殊矩阵</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TwvOij"><img src="https://s4.ax1x.com/2021/12/26/TwvOij.png" alt="TwvOij.png"></a></p>
+<p>ZEROS函数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zeros（m）: 产生m * m的矩阵</span><br><span class="line">zeros（m， n）： 产生m * n零矩阵</span><br><span class="line">zeros（size（a））：产生于矩阵a同样大小的零矩阵</span><br></pre></td></tr></table></figure>
+
+<p>例题：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Twxt6P"><img src="https://s4.ax1x.com/2021/12/26/Twxt6P.png" alt="Twxt6P.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; a = fix(10 + (99 - 10 + 1) * rand(5));</span><br><span class="line">&gt;&gt; b = 0.6 + sqrt(0.1) * randn(5);</span><br><span class="line">&gt;&gt; c = eye(5);</span><br><span class="line">&gt;&gt; (a + b) * c == c * a + b * c</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">  5×5 logical 数组</span><br><span class="line"></span><br><span class="line">   1   1   1   1   1</span><br><span class="line">   1   1   1   1   1</span><br><span class="line">   1   1   1   1   1</span><br><span class="line">   1   1   1   1   1</span><br><span class="line">   1   1   1   1   1</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TwzL2n"><img src="https://s4.ax1x.com/2021/12/26/TwzL2n.png" alt="TwzL2n.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; format rat</span><br><span class="line">&gt;&gt; h = hilb(4)</span><br><span class="line"></span><br><span class="line">h =</span><br><span class="line"></span><br><span class="line">       1              1/2            1/3            1/4     </span><br><span class="line">       1/2            1/3            1/4            1/5     </span><br><span class="line">       1/3            1/4            1/5            1/6     </span><br><span class="line">       1/4            1/5            1/6            1/7     </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、矩阵变换"><a href="#2、矩阵变换" class="headerlink" title="2、矩阵变换"></a>2、矩阵变换</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TwzL2n"><img src="https://s4.ax1x.com/2021/12/26/TwzL2n.png" alt="TwzL2n.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0Sosx"><img src="https://s4.ax1x.com/2021/12/26/T0Sosx.png" alt="T0Sosx.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0SzQI"><img src="https://s4.ax1x.com/2021/12/26/T0SzQI.png" alt="T0SzQI.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0pCef"><img src="https://s4.ax1x.com/2021/12/26/T0pCef.png" alt="T0pCef.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0pEWj"><img src="https://s4.ax1x.com/2021/12/26/T0pEWj.png" alt="T0pEWj.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0p1kF"><img src="https://s4.ax1x.com/2021/12/26/T0p1kF.png" alt="T0p1kF.png"></a></p>
+<h3 id="3、矩阵求值"><a href="#3、矩阵求值" class="headerlink" title="3、矩阵求值"></a>3、矩阵求值</h3><p>求对应的行列式的值的函数是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数：det（a）</span><br></pre></td></tr></table></figure>
+
+<p>矩阵的秩</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数：rank（a）</span><br></pre></td></tr></table></figure>
+
+<p>矩阵的迹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line"></span><br><span class="line">矩阵的迹等于矩阵的对角线元素之和，也等于矩阵的特征值之和</span><br><span class="line">函数： trace（a）</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0975D"><img src="https://s4.ax1x.com/2021/12/26/T0975D.png" alt="T0975D.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T09bPe"><img src="https://s4.ax1x.com/2021/12/26/T09bPe.png" alt="T09bPe.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T09L2d"><img src="https://s4.ax1x.com/2021/12/26/T09L2d.png" alt="T09L2d.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/T0CiGQ"><img src="https://s4.ax1x.com/2021/12/26/T0CiGQ.png" alt="T0CiGQ.png"></a> </p>
+<h3 id="4、矩阵的特征值与特征向量"><a href="#4、矩阵的特征值与特征向量" class="headerlink" title="4、矩阵的特征值与特征向量"></a>4、矩阵的特征值与特征向量</h3><p>函数求特征值：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TDXjiQ"><img src="https://s4.ax1x.com/2021/12/27/TDXjiQ.png" alt="TDXjiQ.png"></a></p>
+<h2 id="三、程序流程控制"><a href="#三、程序流程控制" class="headerlink" title="三、程序流程控制"></a>三、程序流程控制</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcMjU0"><img src="https://s4.ax1x.com/2021/12/29/TcMjU0.png" alt="TcMjU0.png"></a></p>
+<h3 id="1、脚本文件和函数文件"><a href="#1、脚本文件和函数文件" class="headerlink" title="1、脚本文件和函数文件"></a>1、脚本文件和函数文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">文件：</span><br><span class="line"></span><br><span class="line">脚本文件： 后缀名为.m</span><br><span class="line">函数文件：不可以直接使用，只能有做函数调用的方式进行使用</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tcl70s"><img src="https://s4.ax1x.com/2021/12/29/Tcl70s.png" alt="Tcl70s.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc16vF"><img src="https://s4.ax1x.com/2021/12/29/Tc16vF.png" alt="Tc16vF.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc1hU1"><img src="https://s4.ax1x.com/2021/12/29/Tc1hU1.png" alt="Tc1hU1.png"></a></p>
+<h3 id="2、顺序结构"><a href="#2、顺序结构" class="headerlink" title="2、顺序结构"></a>2、顺序结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">数据输入：</span><br><span class="line"></span><br><span class="line">a = input(&#x27;请输入数据a&#x27;);</span><br><span class="line"></span><br><span class="line">数据的输出：</span><br><span class="line"></span><br><span class="line">disp(输出项)</span><br><span class="line"></span><br><span class="line">pause（暂停数秒）</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc8JmQ"><img src="https://s4.ax1x.com/2021/12/29/Tc8JmQ.png" alt="Tc8JmQ.png"></a></p>
+<h3 id="3、用if语句构成选择结构"><a href="#3、用if语句构成选择结构" class="headerlink" title="3、用if语句构成选择结构"></a>3、用if语句构成选择结构</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc870H"><img src="https://s4.ax1x.com/2021/12/29/Tc870H.png" alt="Tc870H.png"></a></p>
+<p>双分支判断语句</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcGiAs"><img src="https://s4.ax1x.com/2021/12/29/TcGiAs.png" alt="TcGiAs.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">多分支判断语句</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcGuB4"><img src="https://s4.ax1x.com/2021/12/29/TcGuB4.png" alt="TcGuB4.png"></a></p>
+<h3 id="4、用switch实现选择结构"><a href="#4、用switch实现选择结构" class="headerlink" title="4、用switch实现选择结构"></a>4、用switch实现选择结构</h3><p>语法：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcYY0e"><img src="https://s4.ax1x.com/2021/12/29/TcYY0e.png" alt="TcYY0e.png"></a></p>
+<p>例：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcYRts"><img src="https://s4.ax1x.com/2021/12/29/TcYRts.png" alt="TcYRts.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc0B5D"><img src="https://s4.ax1x.com/2021/12/29/Tc0B5D.png" alt="Tc0B5D.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc06xA"><img src="https://s4.ax1x.com/2021/12/29/Tc06xA.png" alt="Tc06xA.png"></a></p>
+<p>==注==：num2cell函数的使用。</p>
+<h3 id="5、for实现循环结构"><a href="#5、for实现循环结构" class="headerlink" title="5、for实现循环结构"></a>5、for实现循环结构</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcBeiD"><img src="https://s4.ax1x.com/2021/12/29/TcBeiD.png" alt="TcBeiD.png"></a></p>
+<h3 id="6、while实现循环结构"><a href="#6、while实现循环结构" class="headerlink" title="6、while实现循环结构"></a>6、while实现循环结构</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcscY8"><img src="https://s4.ax1x.com/2021/12/29/TcscY8.png" alt="TcscY8.png"></a></p>
+<h3 id="7、函数文件的定义与调用"><a href="#7、函数文件的定义与调用" class="headerlink" title="7、函数文件的定义与调用"></a>7、函数文件的定义与调用</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcovG9"><img src="https://s4.ax1x.com/2021/12/29/TcovG9.png" alt="TcovG9.png"></a></p>
+<p>函数调用格式：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcTldS"><img src="https://s4.ax1x.com/2021/12/29/TcTldS.png" alt="TcTldS.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">匿名函数：</span><br><span class="line"></span><br><span class="line">格式：</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcTri4"><img src="https://s4.ax1x.com/2021/12/29/TcTri4.png" alt="TcTri4.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc7CSs"><img src="https://s4.ax1x.com/2021/12/29/Tc7CSs.png" alt="Tc7CSs.png"></a></p>
+<h3 id="8、函数的递归调用"><a href="#8、函数的递归调用" class="headerlink" title="8、函数的递归调用"></a>8、函数的递归调用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">函数的嵌套调用;</span><br><span class="line"></span><br><span class="line">函数调用函数。</span><br><span class="line"></span><br><span class="line">递归调用：</span><br><span class="line"></span><br><span class="line">自己调用自己</span><br><span class="line">1、直接递归</span><br><span class="line">2、间接递归</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc780K"><img src="https://s4.ax1x.com/2021/12/29/Tc780K.png" alt="Tc780K.png"></a></p>
+<p>例如：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tc70Xt"><img src="https://s4.ax1x.com/2021/12/29/Tc70Xt.png" alt="Tc70Xt.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写斐波那契数列？？</span><br></pre></td></tr></table></figure>
+
+<p>题解：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">c</span> = <span class="title">f2</span><span class="params">(n)</span></span></span><br><span class="line"><span class="keyword">if</span> n &gt; <span class="number">2</span></span><br><span class="line">    c = f2(n - <span class="number">1</span>) + f2(n - <span class="number">2</span>);</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">    c = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcHW5D"><img src="https://s4.ax1x.com/2021/12/29/TcHW5D.png" alt="TcHW5D.png"></a></p>
+<h3 id="9、函数参数与变量的作用域"><a href="#9、函数参数与变量的作用域" class="headerlink" title="9、函数参数与变量的作用域"></a>9、函数参数与变量的作用域</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcHx2j"><img src="https://s4.ax1x.com/2021/12/29/TcHx2j.png" alt="TcHx2j.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcbkIU"><img src="https://s4.ax1x.com/2021/12/29/TcbkIU.png" alt="TcbkIU.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">全局变量与局部变量</span><br><span class="line"></span><br><span class="line">与其他编程语言一样，就是语法的不同</span><br></pre></td></tr></table></figure>
+
+<p>全局变量例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcbRLq"><img src="https://s4.ax1x.com/2021/12/29/TcbRLq.png" alt="TcbRLq.png"></a></p>
+<h2 id="四、matlab绘图（数据可视化）"><a href="#四、matlab绘图（数据可视化）" class="headerlink" title="四、matlab绘图（数据可视化）"></a>四、matlab绘图（数据可视化）</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TcqFOI"><img src="https://s4.ax1x.com/2021/12/29/TcqFOI.png" alt="TcqFOI.png"></a></p>
+<h3 id="1、二维曲线"><a href="#1、二维曲线" class="headerlink" title="1、二维曲线"></a>1、二维曲线</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">结构：</span><br><span class="line"></span><br><span class="line">plot函数</span><br><span class="line">fplot函数</span><br></pre></td></tr></table></figure>
+
+<p>函数调用格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot（x, y）</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tczaan"><img src="https://s4.ax1x.com/2021/12/29/Tczaan.png" alt="Tczaan.png"></a></p>
+<p>plot矩阵的调用绘图：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TczLdA"><img src="https://s4.ax1x.com/2021/12/29/TczLdA.png" alt="TczLdA.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgSVJ0"><img src="https://s4.ax1x.com/2021/12/29/TgSVJ0.png" alt="TgSVJ0.png"></a></p>
+<p>plot中选项的使用：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgSfmQ"><img src="https://s4.ax1x.com/2021/12/29/TgSfmQ.png" alt="TgSfmQ.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgpP1K"><img src="https://s4.ax1x.com/2021/12/29/TgpP1K.png" alt="TgpP1K.png"></a></p>
+<p>==fplot==函数</p>
+<p>结构：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tgpnht"><img src="https://s4.ax1x.com/2021/12/29/Tgpnht.png" alt="Tgpnht.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgpQc8"><img src="https://s4.ax1x.com/2021/12/29/TgpQc8.png" alt="TgpQc8.png"></a></p>
+<p>双输入函数参数的用法：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgpYAs"><img src="https://s4.ax1x.com/2021/12/29/TgpYAs.png" alt="TgpYAs.png"></a></p>
+<p>例如：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tgpa90"><img src="https://s4.ax1x.com/2021/12/29/Tgpa90.png" alt="Tgpa90.png"></a></p>
+<h3 id="2、辅助操作"><a href="#2、辅助操作" class="headerlink" title="2、辅助操作"></a>2、辅助操作</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgY3Kf"><img src="https://s4.ax1x.com/2021/12/29/TgY3Kf.png" alt="TgY3Kf.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgtqmT"><img src="https://s4.ax1x.com/2021/12/29/TgtqmT.png" alt="TgtqmT.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNVtH"><img src="https://s4.ax1x.com/2021/12/29/TgNVtH.png" alt="TgNVtH.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNn1I"><img src="https://s4.ax1x.com/2021/12/29/TgNn1I.png" alt="TgNn1I.png"></a><img src="C:\Users\67390850\AppData\Roaming\Typora\typora-user-images\image-20211229191742945.png" alt="image-20211229191742945"></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNUcq"><img src="https://s4.ax1x.com/2021/12/29/TgNUcq.png" alt="TgNUcq.png"></a></p>
+<p>==坐标控制==</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNy4J"><img src="https://s4.ax1x.com/2021/12/29/TgNy4J.png" alt="TgNy4J.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNg3R"><img src="https://s4.ax1x.com/2021/12/29/TgNg3R.png" alt="TgNg3R.png"></a></p>
+<p>给图形加网格线</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNRjx"><img src="https://s4.ax1x.com/2021/12/29/TgNRjx.png" alt="TgNRjx.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgN4HO"><img src="https://s4.ax1x.com/2021/12/29/TgN4HO.png" alt="TgN4HO.png"></a></p>
+<p>图形保持：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNT4H"><img src="https://s4.ax1x.com/2021/12/29/TgNT4H.png" alt="TgNT4H.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgNqgI"><img src="https://s4.ax1x.com/2021/12/29/TgNqgI.png" alt="TgNqgI.png"></a></p>
+<p>==图形窗口的分割==</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgUi2n"><img src="https://s4.ax1x.com/2021/12/29/TgUi2n.png" alt="TgUi2n.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgUVbT"><img src="https://s4.ax1x.com/2021/12/29/TgUVbT.png" alt="TgUVbT.png"></a></p>
+<h3 id="3、其他形式的二维曲线"><a href="#3、其他形式的二维曲线" class="headerlink" title="3、其他形式的二维曲线"></a>3、其他形式的二维曲线</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgUNIe"><img src="https://s4.ax1x.com/2021/12/29/TgUNIe.png" alt="TgUNIe.png"></a></p>
+<p>==条形图：==</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">调用格式：</span><br><span class="line"></span><br><span class="line">bar（x, syle）</span><br><span class="line">bar(x, y, style)</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgUOJJ"><img src="https://s4.ax1x.com/2021/12/29/TgUOJJ.png" alt="TgUOJJ.png"></a></p>
+<p>==直方图==</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hist调用格式：</span><br><span class="line"></span><br><span class="line">hist（y, x）;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgaPoD"><img src="https://s4.ax1x.com/2021/12/29/TgaPoD.png" alt="TgaPoD.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rose 函数的调用格式：</span><br><span class="line"></span><br><span class="line">rose(theta, x)</span><br><span class="line">其中，参数theta用于确定每一区间与原点的角度，选项x用于指定区间的划分方式。</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tgasp9"><img src="https://s4.ax1x.com/2021/12/29/Tgasp9.png" alt="Tgasp9.png"></a></p>
+<p>==统计图==</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgaWTO"><img src="https://s4.ax1x.com/2021/12/29/TgaWTO.png" alt="TgaWTO.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tga4te"><img src="https://s4.ax1x.com/2021/12/29/Tga4te.png" alt="Tga4te.png"></a></p>
+<p>矢量图：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgaHXt"><img src="https://s4.ax1x.com/2021/12/29/TgaHXt.png" alt="TgaHXt.png"></a></p>
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgaL0f"><img src="https://s4.ax1x.com/2021/12/29/TgaL0f.png" alt="TgaL0f.png"></a></p>
+<h3 id="4、三维曲线"><a href="#4、三维曲线" class="headerlink" title="4、三维曲线"></a>4、三维曲线</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plot3 函数：</span><br><span class="line"></span><br><span class="line">plot（x, y, z）</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tgd0DP"><img src="https://s4.ax1x.com/2021/12/29/Tgd0DP.png" alt="Tgd0DP.png"></a><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tgdy4g"><img src="https://s4.ax1x.com/2021/12/29/Tgdy4g.png" alt="Tgdy4g.png"></a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plot3(x, y, z, 选项)</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/TgdHC4"><img src="https://s4.ax1x.com/2021/12/29/TgdHC4.png" alt="TgdHC4.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Tgdq29"><img src="https://s4.ax1x.com/2021/12/29/Tgdq29.png" alt="Tgdq29.png"></a></p>
+<h3 id="5、三维曲面图"><a href="#5、三维曲面图" class="headerlink" title="5、三维曲面图"></a>5、三维曲面图</h3><p><img src="https://i.bmp.ovh/imgs/2021/12/36d01c642a87889c.png"></p>
+<p><img src="https://i.bmp.ovh/imgs/2021/12/63fe201c830386db.png"></p>
+<h3 id="6、图形的修饰处理"><a href="#6、图形的修饰处理" class="headerlink" title="6、图形的修饰处理"></a>6、图形的修饰处理</h3><p><img src="https://i.bmp.ovh/imgs/2021/12/3f65c419b3b7eb19.png"></p>
+<p>例子：</p>
+<p><img src="https://i.bmp.ovh/imgs/2021/12/aa19f0021dd7d008.png"></p>
+<hr>
+<p>matlab的简单使用就是这么多了，因为是第一次学，不知道到底哪些功能是我们所需要的，所以我们应该在问题中去学习。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">南宫有肆</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/03/10/matlab/">http://example.com/2022/03/10/matlab/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">南宫有肆</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BB%BA%E6%A8%A1/">
+                                    <span class="chip bg-color">建模</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/03/10/pycharm%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="pycharm的安装与配置">
+                        
+                        <span class="card-title">pycharm的安装与配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/10/Linux%20%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%EF%BC%9A/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Linux 一些常用命令">
+                        
+                        <span class="card-title">Linux 一些常用命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">南宫有肆</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">南宫</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">有肆</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">15.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:67390850@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=67390850" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 67390850" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="122 103 238" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+<!--点击特效-->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+
+<!--雪花飘落-->
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+}
+</script>

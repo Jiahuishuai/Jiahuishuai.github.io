@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>shell常用命令</title>
+      <link href="/2022/03/31/shell%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2022/03/31/shell%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="shell命令："><a href="#shell命令：" class="headerlink" title="shell命令："></a>shell命令：</h1><h2 id="一：常用命令"><a href="#一：常用命令" class="headerlink" title="一：常用命令"></a>一：常用命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">开机启动项：shell:startup</span><br></pre></td></tr></table></figure><p>打开网页的==.bat==文件</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start + 网站名称</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 容易忘记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>牛马King</title>
       <link href="/2022/03/23/%E7%89%9B%E9%A9%ACKing/"/>
       <url>/2022/03/23/%E7%89%9B%E9%A9%ACKing/</url>
